@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="h-[100vh] w-full flex items-center justify-center">
+        <div class="w-[300px] relative ">
+            <input class="w-full outline-0 border px-[12px] py-[8px] " type="search" name="" id="search">
+            <div class="absolute border top-[46px] w-full max-h-[240px] overflow-auto py-[6px]  " id="search_box">
+               
+            </div>
+        </div>
+    </section>
+    <section class="h-[100vh] flex items-center justify-center ">
+        <div class="rounded-[20px] bg-[#000] w-[280px] h-[500px] ">
+            <div class="w-full rounded-[6px] h-[42px] mt-[130px] cursor-text text-[#fff] text-[16px] font-[400] flex items-center justify-end px-[22px] overflow-hidden " id="answer"></div>
+            <div class="w-full rounded-[6px] h-[62px] cursor-text text-[#fff] text-[30px] font-[400] flex items-center justify-end px-[22px] overflow-hidden " id="input"></div>
+            <div class="flex items-center justify-center gap-[9px] mt-[8px] ">
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >7</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >8</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >9</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#ff9f0c] " onclick="num(this)" >*</span>
+            </div>
+            <div class="flex items-center justify-center gap-[9px] mt-[8px] ">
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >4</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >5</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >6</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#ff9f0c] " onclick="num(this)" >-</span>
+            </div>
+            <div class="flex items-center justify-center gap-[9px] mt-[8px] ">
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >1</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >2</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >3</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#ff9f0c] " onclick="num(this)" >+</span>
+            </div>
+            <div class="flex items-center justify-center gap-[9px] mt-[8px] ">
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >0</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="ACbtn()">AC</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#ff9f0c] " onclick="num(this)" >/</span>
+                <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#ff9f0c] " onclick="calc()">=</span>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script>
+        let input = document.getElementById('input');
+        let answer = document.getElementById('answer');
+        
+        function num(e) {
+            input.innerHTML = input.innerHTML + e.innerHTML;
+        }
+        function ACbtn() {
+            input.innerHTML = '';
+        }
+        function calc() {
+            answer.innerHTML = `Ans =  ${eval(input.innerHTML)}`;
+        }
+
+
+
+        let search_box = document.querySelector('#search_box');
+        let Item = document.querySelector('item');
+        let search = document.querySelector('#search');
+        let array = ['Lahore' , 'Multan' , 'Hafizabad' , 'Faisalabad' , 'Karachi' , 'Islamabad' , 'Gujranwala' , 'Indonatia']
+
+        array.map((item , index)=>{
+            let NewElement = document.createElement('div');
+            NewElement.innerHTML = `<p class="px-[12px] py-[8px] text-[#000] hover:text-[#fff] text-[13px] w-full hover:bg-blue-300 cursor-pointer item">${item}</p>`;
+            search_box.appendChild(NewElement);
+
+            search.addEventListener('input' , (e) =>{
+                let value = e.target.value
+            if (item.includes(value)) {
+                item.classList.toggle('hidden')
+            }else{
+
+            }
+        })
+        })
+    </script>
+</body>
+</html>
