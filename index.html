@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <section class="h-[100vh] w-full flex items-center justify-center">
+    <section class="h-[100vh] w-full flex items-center justify-center">
         <div class="w-[300px] relative ">
             <input class="w-full outline-0 border px-[12px] py-[8px] " type="search" name="" id="search">
             <div class="absolute border top-[46px] w-full max-h-[240px] overflow-auto py-[6px]  " id="search_box">
                
             </div>
         </div>
-    </section> -->
+    </section>
     <section class="h-[100vh] flex items-center justify-center ">
         <div class="rounded-[20px] bg-[#000] w-[280px] h-[500px] ">
             <p class="text-[11px] text-[#ff9f0c] flex items-center justify-center mt-[8px] ">Danish Yaqoob</p>
@@ -45,45 +45,46 @@
                 <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#ff9f0c] " onclick="calc()">=</span>
             </div>
         </div>
+        <audio src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/click.mp3" id="audio"></audio>
+        <audio src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3" id="audio1"></audio>
+        <audio src="http://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" id="audio2"></audio>
     </section>
 
 
 
     <script>
+        let audio = document.getElementById('audio');
+        let audio1 = document.getElementById('audio1');
+        let audio2 = document.getElementById('audio2');
         let input = document.getElementById('input');
         let answer = document.getElementById('answer');
         
         function num(e) {
             input.innerHTML = input.innerHTML + e.innerHTML;
+            audio.play();
+            audio1.play();
         }
         function ACbtn() {
             input.innerHTML = '';
+            audio2.play()
         }
         function calc() {
             answer.innerHTML = `Ans =  ${eval(input.innerHTML)}`;
+            audio2.play()
         }
 
 
+        let search_box = document.getElementById('search_box');
+        let search = document.getElementById('search');
+        let finalSearch = search.value.toUpperCase()
+        let array = ['Lahore' , 'Multan' , 'Hafizabad' , 'Faisalabad' , 'Karachi' , 'Islamabad' , 'Gujranwala' , 'Indonatia']
 
-        // let search_box = document.querySelector('#search_box');
-        // let Item = document.querySelector('item');
-        // let search = document.querySelector('#search');
-        // let array = ['Lahore' , 'Multan' , 'Hafizabad' , 'Faisalabad' , 'Karachi' , 'Islamabad' , 'Gujranwala' , 'Indonatia']
+        array.map((item , index)=>{
+            let NewElement = document.createElement('div');
+            NewElement.innerHTML = `<p class="px-[12px] py-[8px] text-[#000] hover:text-[#fff] text-[13px] w-full hover:bg-blue-300 cursor-pointer item">${item}</p>`;
+            search_box.appendChild(NewElement);
+        })
 
-        // array.map((item , index)=>{
-        //     let NewElement = document.createElement('div');
-        //     NewElement.innerHTML = `<p class="px-[12px] py-[8px] text-[#000] hover:text-[#fff] text-[13px] w-full hover:bg-blue-300 cursor-pointer item">${item}</p>`;
-        //     search_box.appendChild(NewElement);
-
-        //     search.addEventListener('input' , (e) =>{
-        //         let value = e.target.value
-        //     if (item.includes(value)) {
-        //         item.classList.toggle('hidden')
-        //     }else{
-
-        //     }
-        // })
-        // })
     </script>
 </body>
 </html>
