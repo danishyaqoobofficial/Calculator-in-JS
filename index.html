@@ -5,8 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
+    <style>
+        .loader {
+            border: 7px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 7px solid #3498db;
+            width: 70px;
+            height: 70px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+            }
+
+            /* Safari */
+            @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .L {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid #3498db;
+            width: 31px;
+            height: 30px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spon 2s linear infinite;
+            }
+
+            /* Safari */
+            @-webkit-keyframes spon {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spon {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
+    <section class="flex items-center flex-wrap w-full pt-[12px]" >
+        <p class="text-center text-[14px] w-full" id="date" ></p>
+        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/KGkiIBTq0y0?si=-Rkeu83Lj_uZrzqv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+    </section>
     <section class="h-[100vh] w-full flex items-center justify-center">
         <div class="w-[300px] relative ">
             <input class="w-full outline-0 border px-[12px] py-[8px] " type="search" name="" id="search">
@@ -49,10 +95,33 @@
         <audio src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3" id="audio1"></audio>
         <audio src="http://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" id="audio2"></audio>
     </section>
-
-
+    <section class="py-[50px] ">
+        <button class="mx-auto bg-[#fff] border text-[14px] h-[40px] w-[90px] bhadow-lg rounded-[5px] px-[22px] py-[9px] flex items-center justify-center " id="btnLoader">
+            Click
+        </button>
+    </section>
+    <div class="h-[100vh] w-full bg-[#000] flex items-center justify-center fixed inset-0" id="loader">
+        <div class="loader"></div>
+    </div>
 
     <script>
+        let btnLoader = document.getElementById('btnLoader');
+        btnLoader.addEventListener('click' , () =>{
+            btnLoader.innerHTML = '<div class="L"></div>';
+            setTimeout(() => {
+                btnLoader.innerHTML = 'Saved'
+            }, 1100);
+        })
+
+
+        let Loader =document.getElementById('loader');
+        window.addEventListener("load" , () =>{
+            Loader.classList.add('!hidden');
+        })
+
+
+
+
         let audio = document.getElementById('audio');
         let audio1 = document.getElementById('audio1');
         let audio2 = document.getElementById('audio2');
@@ -86,5 +155,6 @@
         })
 
     </script>
+    <script src="/app.js"></script>
 </body>
 </html>
