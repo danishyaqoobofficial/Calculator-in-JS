@@ -12,3 +12,23 @@ if (window.location.href.includes('/index.html')) {
 }else{
     console.log('llll');
 }
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('load', async () =>{
+    try {
+        const res = await fetch('https://backend.karaydaar.com/property/get_homepage_properties/');
+        const data = await res.json();
+        console.log(data.data);
+    } catch (error) {
+        console.log('error');
+    }
+})

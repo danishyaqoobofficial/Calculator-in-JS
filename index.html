@@ -97,6 +97,13 @@
             Click
         </button>
     </section>
+
+
+    <img id="img" src= "" alt="">
+
+
+
+
     <div class="h-[100vh] w-full bg-[#000] flex items-center justify-center fixed inset-0" id="loader">
         <div class="loader"></div>
     </div>
@@ -114,7 +121,7 @@
         window.addEventListener("load" , () =>{
             setTimeout(() => {
                 Loader.classList.add('!hidden');
-            }, 600);
+            }, 0);
         });
 
         let audio = document.getElementById('audio');
