@@ -5,4 +5,10 @@ setInterval(() => {
 }, 1000);
 
 
-let body = document.querySelector('body')
+let body = document.body;
+
+if (window.location.href.includes('/index.html')) { 
+    body.style.background = 'white'
+}else{
+    console.log('llll');
+}
