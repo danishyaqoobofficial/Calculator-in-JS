@@ -66,3 +66,7 @@ input[type=number] {
         transform: rotate(4deg);
     }
 }
+
+.custom_transition{
+    transition: all 0.3s;
+}

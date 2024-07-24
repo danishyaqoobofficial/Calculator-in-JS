@@ -115,10 +115,21 @@ window.addEventListener('load', async () =>{
 // 
 
 
+
 let rotate_box = document.getElementById('rotate_box');
 let input_btn = document.getElementById('input-btn');
 let inputNumber = document.getElementById('number');
+let Error = document.getElementById('error');
+
 
 input_btn.addEventListener('click' , () =>{
-    rotate_box.classList.add(`rotate-[${inputNumber.value/2}deg]`);
+    if (inputNumber.value === '') {
+        inputNumber.classList.add('!border-[#FF0000]');
+    }else if (inputNumber.value > 360) {
+        Error.innerHTML = 'Your value is too long'
+    }else if (inputNumber.value === '' || inputNumber.value < 361) {
+        rotate_box.classList.add(`rotate-[${inputNumber.value/2}deg]`);
+        inputNumber.classList.remove('!border-[#FF0000]');
+        Error.innerHTML = ''
+    }
 })
