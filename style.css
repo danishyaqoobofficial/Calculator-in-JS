@@ -1,3 +1,16 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
 .loader {
     border: 7px solid #f3f3f3;
     border-radius: 50%;
@@ -37,4 +50,19 @@
     @keyframes spon {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+
+#gggg{
+    animation-name: hello;
+    animation-duration: 2s;
+}
+
+@keyframes hello{
+    0%{
+        transform: rotate(4deg);
+    }
+    100%{
+        transform: rotate(4deg);
+    }
 }

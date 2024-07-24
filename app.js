@@ -8,12 +8,14 @@ setInterval(() => {
 // 
 
 const data = [
-    "John Doe",
-    "Anna Smith",
-    "Peter Johnson",
-    "Mary Brown",
-    "Michael Davis",
-    "Jennifer Wilson",
+    "Lahore",
+    "Multan",
+    "Karachi",
+    "Hafizabad",
+    "Islamabad",
+    "Faisalabad",
+    "Gujranwala",
+    "Dunia poor"
 ];
 
 const dropdownInput = document.getElementById('dropdownInput');
@@ -106,4 +108,17 @@ window.addEventListener('load', async () =>{
     } catch (error) {
         console.log('error');
     }
+})
+
+// 
+// 
+// 
+
+
+let rotate_box = document.getElementById('rotate_box');
+let input_btn = document.getElementById('input-btn');
+let inputNumber = document.getElementById('number');
+
+input_btn.addEventListener('click' , () =>{
+    rotate_box.classList.add(`rotate-[${inputNumber.value/2}deg]`);
 })
