@@ -5,67 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
-    <style class="bg-red-300">
-        .loader {
-            border: 7px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 7px solid #3498db;
-            width: 70px;
-            height: 70px;
-            -webkit-animation: spin 2s linear infinite; /* Safari */
-            animation: spin 2s linear infinite;
-            }
-
-            /* Safari */
-            @-webkit-keyframes spin {
-            0% { -webkit-transform: rotate(0deg); }
-            100% { -webkit-transform: rotate(360deg); }
-            }
-
-            @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .L {
-            border: 3px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 3px solid #3498db;
-            width: 31px;
-            height: 30px;
-            -webkit-animation: spin 2s linear infinite; /* Safari */
-            animation: spon 2s linear infinite;
-            }
-
-            /* Safari */
-            @-webkit-keyframes spon {
-            0% { -webkit-transform: rotate(0deg); }
-            100% { -webkit-transform: rotate(360deg); }
-            }
-
-            @keyframes spon {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <section class="flex items-center flex-wrap w-full pt-[12px]" >
-        <p class="text-center text-[14px] w-full" id="date" ></p>
-        <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/KGkiIBTq0y0?si=-Rkeu83Lj_uZrzqv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-    </section>
-    <section class="h-[100vh] w-full flex items-center justify-center">
-        <div class="w-[300px] relative ">
-            <input class="w-full outline-0 border px-[12px] py-[8px] " type="search" name="" id="search">
-            <div class="absolute border top-[46px] w-full max-h-[240px] overflow-auto py-[6px]  " id="search_box">
+    <p class="w-full text-center text-[14px] mt-[8px]" id="date"></p>
+
+    <!--  -->
+
+    <section class=" w-full py-[50px] h-[400px] ">
+        <div class="w-[300px] relative mx-auto">
+            <input class="w-full outline-0 border px-[12px] py-[8px] text-[15px] " id="dropdownInput" placeholder="Search..." type="search" name="" id="search">
+            <div class="absolute border top-[46px] w-full max-h-[240px] overflow-auto" id="dropdownMenu">
                
             </div>
         </div>
     </section>
+
+    <!--  -->
+
     <section class="h-[100vh] flex items-center justify-center ">
         <div class="rounded-[20px] bg-[#000] w-[280px] h-[500px] ">
             <p class="text-[11px] text-[#ff9f0c] flex items-center justify-center mt-[8px] ">Danish Yaqoob</p>
             <div class="w-full rounded-[6px] h-[42px] mt-[110px] cursor-text text-[#fff] text-[16px] font-[400] flex items-center justify-end px-[22px] overflow-hidden " id="answer"></div>
-            <div class="w-full rounded-[6px] h-[62px] cursor-text text-[#fff] text-[30px] font-[400] flex items-center justify-end px-[22px] overflow-hidden " id="input"></div>
+            <input class="w-full bg-[#000] outline-0 border-0 rounded-[6px] h-[62px] cursor-text text-[#fff] text-[30px] font-[400] flex items-center justify-end px-[22px] text-[#fff] overflow-hidden " id="input"></input>
             <div class="flex items-center justify-center gap-[9px] mt-[8px] ">
                 <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >7</span>
                 <span class="h-[50px] w-[50px] rounded-[100px] flex items-center justify-center p-[14px] text-[19px] cursor-pointer font-[400] text-[#fff] bg-[#a5a5a5] " onclick="num(this)" >8</span>
@@ -92,65 +54,25 @@
             </div>
         </div>
     </section>
+
+    <!--  -->
+
     <section class="py-[50px] ">
         <button class="mx-auto bg-[#fff] border text-[14px] h-[40px] w-[90px] bhadow-lg rounded-[5px] px-[22px] py-[9px] flex items-center justify-center " id="btnLoader">
             Click
         </button>
     </section>
 
+    <!--  -->
 
     <img id="img" src= "" alt="">
 
-
-
+    <!-- Loader -->
 
     <div class="h-[100vh] w-full bg-[#000] flex items-center justify-center fixed inset-0" id="loader">
         <div class="loader"></div>
     </div>
 
-    <script>
-        let btnLoader = document.getElementById('btnLoader');
-        btnLoader.addEventListener('click' , () =>{
-            btnLoader.innerHTML = '<div class="L"></div>';
-            setTimeout(() => {
-                btnLoader.innerHTML = 'Saved'
-            }, 1100);
-        })
-
-        let Loader = document.getElementById('loader');
-        window.addEventListener("load" , () =>{
-            setTimeout(() => {
-                Loader.classList.add('!hidden');
-            }, 0);
-        });
-
-        let audio = document.getElementById('audio');
-        let audio1 = document.getElementById('audio1');
-        let audio2 = document.getElementById('audio2');
-        let input = document.getElementById('input');
-        let answer = document.getElementById('answer');
-        
-        function num(e) {
-            input.innerHTML = input.innerHTML + e.innerHTML;
-        }
-        function ACbtn() {
-            input.innerHTML = '';
-        }
-        function calc() {
-            answer.innerHTML = `Ans =  ${eval(input.innerHTML)}`;
-        }
-
-        let search_box = document.getElementById('search_box');
-        let search = document.getElementById('search');
-        let finalSearch = search.value.toUpperCase()
-        let array = ['Lahore' , 'Multan' , 'Hafizabad' , 'Faisalabad' , 'Karachi' , 'Islamabad' , 'Gujranwala' , 'Indonatia']
-
-        array.map((item , index)=>{
-            let NewElement = document.createElement('div');
-            NewElement.innerHTML = `<p class="px-[12px] py-[8px] text-[#000] hover:text-[#fff] text-[13px] w-full hover:bg-blue-300 cursor-pointer item">${item}</p>`;
-            search_box.appendChild(NewElement);
-        }) 
-    </script>
     <script src="/app.js"></script>
 </body>
 </html>
