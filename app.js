@@ -92,3 +92,18 @@ saveBtn.addEventListener('click', () =>{
 
     }
 })
+
+//
+//
+//
+
+window.addEventListener('load', async () =>{
+    try {
+        const res = await fetch('https://backend.karaydaar.com/utility/get_societies/');
+        const data = await res.json()
+        console.log(`name = ${data.data[0].name}`);
+        console.log(`id = ${data.data[0].id}`);
+    } catch (error) {
+        console.log('error');
+    }
+})
