@@ -1,11 +1,5 @@
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
+.custom_transition{
+    transition: all 0.3s;
 }
 
 
@@ -51,20 +45,39 @@ input[type=number] {
 }
 
 
-#gggg{
-    animation-name: hello;
-    animation-duration: 2s;
+
+
+
+
+
+
+
+
+
+
+
+
+.helllo::before{
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 100px;
+    height: 44px;
+    content: '';
+    border-top-left-radius: 22px;
+    box-shadow: -30px -20px 0 white;
 }
 
-@keyframes hello{
-    0%{
-        transform: rotate(4deg);
-    }
-    100%{
-        transform: rotate(4deg);
-    }
-}
 
-.custom_transition{
-    transition: all 0.3s;
+.helllo::after {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 200px; /* Adjust as needed */
+    width: 100px;
+    height: 44px;
+    content: '';
+    border-top-right-radius: 22px;
+    box-shadow: 30px -20px 0 white;
 }
