@@ -17,35 +17,22 @@
 
     <!-- search -->
 
-    <section class=" w-full py-[50px] h-[400px] bg-transparent ">
-        <div class="w-[300px] relative mx-auto">
-            <input class="w-full outline-0 border px-[12px] py-[8px] text-[15px] " id="dropdownInput" placeholder="Search..." type="search" name="" id="search">
-            <div class="absolute border top-[46px] w-full max-h-[240px] overflow-auto" id="dropdownMenu">
-               
+    <section class="py-[50px]  ">
+        <button class="rounded-[6px] px-[22px] py-[11px] text-[14px] flex items-center border justify-center mx-auto " onclick="addNote()">
+            Add Note
+        </button>
+        <div class="w-[500px] mx-auto" id="data_div" >
+            <div class=" ">
+
             </div>
         </div>
     </section>
 
-    <!-- button -->
-
-    <section class="py-[50px] ">
-        <button class="mx-auto bg-[#fff] border text-[14px] h-[40px] w-[90px] bhadow-lg rounded-[5px] px-[22px] py-[9px] flex items-center justify-center " id="btnLoader">
-            Click
-        </button>
+    <section class="h-[100vh] fixed inset-0 bg-[#000] hidden " id="loader">
+        <div class="h-full w-full flex items-center justify-center ">
+            <div class="loader"></div>
+        </div>
     </section>
-
-    <!--  -->
-    
-    <section class="flex items-center justify-center w-full bg-[#000] pb-[100px] ">
-        <div class=" mx-auto bg-[#fff] h-[44px] w-[200px] rounded-bl-[22px] rounded-br-[22px] relative helllo helllo2 "></div>
-    </section>
-    
-    <!-- Loader -->
-
-    <div class="h-[100vh] w-full bg-[#000] flex items-center justify-center fixed inset-0 " id="loader">
-        <div class="loader"></div>
-    </div>
-
     <script src="/app.js"></script>
 </body>
 </html>
