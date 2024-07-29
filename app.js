@@ -19,3 +19,14 @@ window.addEventListener('load', async () =>{
         loader.classList.remove('!block');
     }
 })
+
+
+
+date.addEventListener('copy', () =>{
+    console.log(data);
+})
+
+
+
+
+// url json placeholder  --->  'https://jsonplaceholder.typicode.com/users'
