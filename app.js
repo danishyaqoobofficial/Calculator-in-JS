@@ -5,9 +5,6 @@ setInterval(() => {
 
 
 
-
-
-
 let loader = document.getElementById('loader');
 
 window.addEventListener('load', async () =>{
