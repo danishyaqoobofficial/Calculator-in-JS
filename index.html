@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Creativity</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    
-    <!--  -->
-    
-    <section class="h-[87vh] bg-cover bg-no-repeat bg-center w-full bg-fixed py-[10px] " style="background-image: url(https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630);">
-        <p class="w-full text-center text-[14px] mt-[8px] " id="date"></p>
-    </section>
-
-    <!-- search -->
-
-    <section class="py-[50px]  ">
-        <button class="rounded-[6px] px-[22px] py-[11px] text-[14px] flex items-center border justify-center mx-auto " onclick="addNote()">
-            Add Note
-        </button>
-        <div class="w-[500px] mx-auto" id="data_div" >
-            <div class=" ">
-
+    <section>
+        <div class="flex gap-[6px] mt-[22px] mx-auto max-w-[400px] ">
+            <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " required type="text">
+            <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border ">
+                Add
+            </button>
+        </div>
+        <div class="max-w-[800px] w-full mx-auto border rounded-[7px] overflow-hidden mt-[22px] ">
+            <div class="flex items-center gap-[30px] px-[22px] py-[11px]">
+                <p>ID</p>
+                <p class="flex-1 text-center ">Title</p>
+            </div>
+            <div id="main_post_data">
+                <!-- <div class="flex items-center gap-[30px] px-[22px] py-[11px] border-t relative group ">
+                    <p class="text-[14px] text-[#000]/40">0</p>
+                    <p class="flex-1 text-center line-clamp-1 text-[14px] text-[#000]/40">Danish</p>
+                    <div class="absolute hidden group-hover:block h-full top-0 bottom-0 right-0">
+                        <div class="flex items-center gap-[4px] h-full ">
+                            <span class="flex items-center justify-center h-full w-full bg-[#000]/20 cursor-pointer rounded-[6px] px-[12px] " id="edit">
+                                <i class="fa-solid fa-edit text-[#000] "></i>
+                            </span>
+                            <span class="flex items-center justify-center h-full w-full bg-[#FF0000]/20 cursor-pointer rounded-[6px] px-[12px] " id="delete">
+                                <i class="fa-solid fa-trash text-[#FF0000] "></i>
+                            </span>
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </section>
