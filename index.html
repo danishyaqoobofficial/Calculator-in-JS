@@ -10,17 +10,26 @@
 </head>
 <body>
     <section>
-        <div class="flex gap-[6px] mt-[22px] mx-auto max-w-[400px] ">
-            <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " placeholder="Add User Title" required type="text" id="user_input">
-            <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="user_btn">
-                Add
-            </button>
-        </div>
-        <div class="flex gap-[6px] mt-[11px] mx-auto max-w-[400px] ">
-            <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " maxlength="3" id="delete_input" placeholder="Delete User enter just id" required type="text">
-            <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="delete_btn">
-                Delete
-            </button>
+        <div class="max-w-[550px] mx-auto ">
+            <div class="flex gap-[6px] mt-[22px]">
+                <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " placeholder="Add User Title" required type="text" id="user_input">
+                <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="user_btn">
+                    Add
+                </button>
+            </div>
+            <div class="flex gap-[6px] mt-[11px]">
+                <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " maxlength="3" id="delete_input" placeholder="Delete User enter just id" required type="text">
+                <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="delete_btn">
+                    Delete
+                </button>
+            </div>
+            <div class="flex gap-[6px] mt-[11px]">
+                <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " maxlength="3" id="put_input_id" placeholder="ID" required type="text">
+                <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " id="put_input_title" placeholder="Title" required type="text">
+                <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="put_btn">
+                    PUT data
+                </button>
+            </div>
         </div>
         <div class="max-w-[800px] w-full mx-auto border rounded-[7px] overflow-hidden mt-[22px] ">
             <div class="flex items-center gap-[30px] px-[22px] py-[11px]">

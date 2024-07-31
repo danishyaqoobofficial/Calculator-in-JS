@@ -77,3 +77,32 @@ user_btn.addEventListener('click', () =>{
         .then((json) => console.log(json));
     }
 })
+
+
+
+
+let put_btn = document.getElementById('put_btn');
+let put_input_id = document.getElementById('put_input_id');
+let put_input_title = document.getElementById('put_input_title');
+
+put_btn.addEventListener('click', () =>{
+    if (put_input_id.value === '' && put_input_title.value === '') {
+        put_input_id.classList.add('!border-red-300');
+        put_input_title.classList.add('!border-red-300');
+    } else {
+        put_input_id.classList.remove('!border-red-300');
+        put_input_title.classList.remove('!border-red-300');
+
+        fetch(`https://jsonplaceholder.typicode.com/posts/${put_input_id.value}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                title: put_input_title.value,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+            })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+        }
+})
