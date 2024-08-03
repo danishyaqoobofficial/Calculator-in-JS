@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Creativity</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    <section>
-        <div class="max-w-[550px] mx-auto ">
-            <div class="flex gap-[6px] mt-[22px]">
-                <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " placeholder="Add User Title" required type="text" id="user_input">
-                <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="user_btn">
-                    Add
-                </button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Creativity</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <section>
+            <div class="max-w-[800px] mx-auto ">
+                <div class="flex gap-[6px] mt-[170px]">
+                    <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " placeholder="Add User Title" required type="text" id="user_input">
+                    <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="user_btn">
+                        Add
+                    </button>
+                </div>
+                <div class="flex gap-[6px] mt-[11px]">
+                    <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " maxlength="3" id="delete_input" placeholder="Delete User enter just id" required type="text">
+                    <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="delete_btn">
+                        Delete
+                    </button>
+                </div>
+                <div class="flex gap-[6px] mt-[11px]">
+                    <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " maxlength="3" id="put_input_id" placeholder="ID" required type="text">
+                    <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " id="put_input_title" placeholder="Title" required type="text">
+                    <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="put_btn">
+                        PUT data
+                    </button>
+                </div>
             </div>
-            <div class="flex gap-[6px] mt-[11px]">
-                <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " maxlength="3" id="delete_input" placeholder="Delete User enter just id" required type="text">
-                <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="delete_btn">
-                    Delete
-                </button>
-            </div>
-            <div class="flex gap-[6px] mt-[11px]">
-                <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " maxlength="3" id="put_input_id" placeholder="ID" required type="text">
-                <input class="flex-1 w-full outline-0 border rounded-[6px] px-[12px] py-[10px] text-[14px] " id="put_input_title" placeholder="Title" required type="text">
-                <button class="px-[22px] flex items-center justify-center text-[14px] rounded-[6px] border " id="put_btn">
-                    PUT data
-                </button>
-            </div>
-        </div>
-        <div class="max-w-[800px] w-full mx-auto border rounded-[7px] overflow-hidden mt-[22px] ">
+            <section class="max-w-[800px] w-full mx-auto w-full ">
+                <div class="draggable w-[800px] py-[11px] absolute cursor-pointer text-center bg-[#ff5e00] hover:bg-[#ff5e00]/80 custom_transition top-[0px] flex items-center justify-center text-white text-[14px] rounded-[6px] ">Click & Move</div>
+                <div class="draggable w-[800px] py-[11px] absolute cursor-pointer text-center bg-[#ff5e00] hover:bg-[#ff5e00]/80 custom_transition top-[50px] flex items-center justify-center text-white text-[14px] rounded-[6px] ">Click & Move</div>
+                <div class="draggable w-[800px] py-[11px] absolute cursor-pointer text-center bg-[#ff5e00] hover:bg-[#ff5e00]/80 custom_transition top-[100px] flex items-center justify-center text-white text-[14px] rounded-[6px] ">Click & Move</div>
+            </section>
+            <div class="max-w-[800px] w-full mx-auto border rounded-[7px] overflow-hidden mt-[22px] ">
             <div class="flex items-center gap-[30px] px-[22px] py-[11px]">
                 <p>ID</p>
                 <p class="flex-1 text-center ">Title</p>

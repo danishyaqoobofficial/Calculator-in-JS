@@ -106,3 +106,40 @@ put_btn.addEventListener('click', () =>{
             .then((json) => console.log(json));
         }
 })
+
+
+
+
+
+
+var draggables = document.querySelectorAll('.draggable');
+draggables.forEach(function(draggable) {
+    draggable.addEventListener('mousedown', startDrag);
+});
+
+function startDrag(e) {
+    var draggable = e.target;
+    e.preventDefault();
+
+    var initialX = e.clientX;
+    var initialY = e.clientY;
+
+    var offsetX = draggable.offsetLeft;
+    var offsetY = draggable.offsetTop;
+
+    function drag(e) {
+        var newX = offsetX + (e.clientX - initialX);
+        var newY = offsetY + (e.clientY - initialY);
+
+        draggable.style.left = newX + "px";
+        draggable.style.top = newY + "px";
+    }
+
+    function stopDrag() {
+        document.removeEventListener('mousemove', drag);
+        document.removeEventListener('mouseup', stopDrag);
+    }
+
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDrag);
+}
