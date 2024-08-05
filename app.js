@@ -5,16 +5,63 @@ window.addEventListener('load', async () => {
     try {
         const res = await fetch('https://jsonplaceholder.typicode.com/posts');
         const data = await res.json();
-        data.map((post) => {
-            let main_post_data = document.getElementById('main_post_data');
+
+        let main_post_data = document.getElementById('main_post_data');
+        let fragment = document.createDocumentFragment();
+
+        data.forEach(post => {
             let newElement = document.createElement('div');
+            newElement.classList.add('item');
             newElement.id = `post-${post.id}`;
-            let element = `<div class="flex items-center gap-[30px] px-[22px] py-[11px] border-t">
-                <p class="text-[14px] text-[#000]/40">${post.id}</p>
-                <p class="flex-1 text-center line-clamp-1 text-[14px] text-[#000]/40">${post.title}</p>
-            </div>`;
-            newElement.innerHTML = element;
-            main_post_data.appendChild(newElement);
+            newElement.innerHTML = `
+                <div class="flex items-center gap-[30px] px-[22px] py-[11px] border-t" draggable="true">
+                    <p class="text-[14px] text-[#000]/40">${post.id}</p>
+                    <p class="flex-1 text-center line-clamp-1 text-[14px] text-[#000]/40">${post.title}</p>
+                </div>`;
+            fragment.appendChild(newElement);
+        });
+
+        main_post_data.appendChild(fragment);
+
+        let originalElement = null;
+        let nextSibling = null;
+
+        main_post_data.addEventListener('dragstart', (e) => {
+            if (e.target.closest('.item')) {
+                originalElement = e.target.closest('.item');
+                originalElement.classList.add('dragging', 'origin');
+                nextSibling = originalElement.nextSibling;
+            }
+        });
+
+        main_post_data.addEventListener('dragend', (e) => {
+            if (originalElement) {
+                originalElement.classList.remove('dragging', 'origin');
+                originalElement = null;
+            }
+        });
+
+        main_post_data.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        main_post_data.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const draggingItem = main_post_data.querySelector('.dragging');
+            const items = [...main_post_data.querySelectorAll('.item:not(.dragging)')];
+
+            let nextSibling = items.find(sibling => {
+                const rect = sibling.getBoundingClientRect();
+                return e.clientY < rect.top + rect.height / 2;
+            });
+
+            if (draggingItem) {
+                if (nextSibling) {
+                    main_post_data.insertBefore(draggingItem, nextSibling);
+                } else {
+                    main_post_data.appendChild(draggingItem);
+                }
+            }
         });
     } catch (error) {
         console.log('error', error);
@@ -22,6 +69,14 @@ window.addEventListener('load', async () => {
         loader.classList.remove('!block');
     }
 });
+
+
+
+
+
+
+
+
 
 
 
@@ -108,38 +163,3 @@ put_btn.addEventListener('click', () =>{
 })
 
 
-
-
-
-
-var draggables = document.querySelectorAll('.draggable');
-draggables.forEach(function(draggable) {
-    draggable.addEventListener('mousedown', startDrag);
-});
-
-function startDrag(e) {
-    var draggable = e.target;
-    e.preventDefault();
-
-    var initialX = e.clientX;
-    var initialY = e.clientY;
-
-    var offsetX = draggable.offsetLeft;
-    var offsetY = draggable.offsetTop;
-
-    function drag(e) {
-        var newX = offsetX + (e.clientX - initialX);
-        var newY = offsetY + (e.clientY - initialY);
-
-        draggable.style.left = newX + "px";
-        draggable.style.top = newY + "px";
-    }
-
-    function stopDrag() {
-        document.removeEventListener('mousemove', drag);
-        document.removeEventListener('mouseup', stopDrag);
-    }
-
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('mouseup', stopDrag);
-}
